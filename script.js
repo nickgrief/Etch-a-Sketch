@@ -14,6 +14,9 @@ for (let i = 0; i < 16; i++) {
     cell.addEventListener("mouseenter", () => {
       cell.classList.toggle("howered");
     });
+    cell.addEventListener("touchstart", () => {
+      cell.classList.toggle("howered");
+    });
     row.appendChild(cell);
   }
   row.classList.add("row");

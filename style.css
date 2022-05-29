@@ -9,19 +9,25 @@ body {
   background-color: palegoldenrod;
   display: flex;
   flex-direction: column;
+  width: 95vw;
+  max-width: 95vh;
+  height: 95vw;
+  max-height: 95vh;
 }
 
 .row {
   background-color: paleturquoise;
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
 }
 
 .cell {
   background-color: rgb(241, 176, 198);
-  margin: 4px;
-  width: 12px;
-  height: 12px;
+  /* margin: 4px; */
+  /* width: 4vw;
+  height: 4vw; */
+  flex-grow: 1;
 }
 
 .howered {
