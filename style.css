@@ -41,7 +41,7 @@ button:hover {
 }
 
 .cell {
-  background-color: white;
+  background-color: #ffffff;
   /* margin: 4px; */
   /* width: 4vw;
   height: 4vw; */
@@ -49,5 +49,6 @@ button:hover {
 }
 
 .howered {
-  background-color: black;
+  /* background-color: black; */
+  filter: brightness(100%);
 }
