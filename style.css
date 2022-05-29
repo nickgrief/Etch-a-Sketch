@@ -1,12 +1,30 @@
 body {
-  background-color: grey;
+  background-color: palegoldenrod;
+  margin: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+button {
+  width: fit-content;
+  height: 20px;
+  margin: 4px;
+  line-height: 100%;
+  border: 0;
+  background-color: palegreen;
+}
+
+button:hover {
+  background-color: rgb(71, 202, 71);
+  border: 2px solid white;
+}
+
 .grid {
-  background-color: palegoldenrod;
+  background-color: paleturquoise;
+  box-sizing: border-box;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   width: 95vw;
@@ -23,7 +41,7 @@ body {
 }
 
 .cell {
-  background-color: rgb(241, 176, 198);
+  background-color: white;
   /* margin: 4px; */
   /* width: 4vw;
   height: 4vw; */
@@ -31,5 +49,5 @@ body {
 }
 
 .howered {
-  background-color: purple;
+  background-color: black;
 }

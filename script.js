@@ -2,27 +2,48 @@
 
 const body = document.querySelector("body");
 
-// Make grid
-const grid = document.createElement("div");
-
-// Make horizontal holders
-for (let i = 0; i < 16; i++) {
-  let row = document.createElement("div");
-  for (let j = 0; j < 16; j++) {
-    let cell = document.createElement("div");
-    cell.classList.add("cell");
-    cell.addEventListener("mouseenter", () => {
-      cell.classList.toggle("howered");
-    });
-    cell.addEventListener("touchstart", () => {
-      cell.classList.toggle("howered");
-    });
-    row.appendChild(cell);
+function createGrid(size = 2) {
+  const prew_grid = document.querySelector(".grid");
+  if (prew_grid != null) {
+    prew_grid.remove();
   }
-  row.classList.add("row");
-  grid.appendChild(row);
+  // Make grid
+  const grid = document.createElement("div");
+
+  // Make horizontal holders
+  for (let i = 0; i < size; i++) {
+    let row = document.createElement("div");
+    for (let j = 0; j < size; j++) {
+      let cell = document.createElement("div");
+      cell.classList.add("cell");
+      cell.addEventListener("mouseenter", () => {
+        cell.classList.add("howered");
+      });
+      cell.addEventListener("touchstart", () => {
+        cell.classList.add("howered");
+      });
+      row.appendChild(cell);
+    }
+    row.classList.add("row");
+    grid.appendChild(row);
+
+    // Add grid to page (do it after all styling)
+    grid.classList.add("grid");
+    body.appendChild(grid);
+  }
 }
 
-// Add grid to page (do it after all styling)
-grid.classList.add("grid");
-body.appendChild(grid);
+// Add button on top of the screen
+const new_grid = document.createElement("button");
+new_grid.textContent = "NEW GRID";
+new_grid.addEventListener("click", () => {
+  let size = parseInt(prompt("Enter the size of new grid:"));
+  if (isNaN(size)) {
+    alert("Size should be a whole number :)");
+  } else if (size < 1 || size > 100) {
+    alert("Size outside of reasonable bounds :3");
+  } else {
+    createGrid(size);
+  }
+});
+body.appendChild(new_grid);
