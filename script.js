@@ -21,7 +21,7 @@ function createGrid(size = 2) {
           "#" + Math.floor(Math.random() * 16777215).toString(16);
         if (cell.classList.contains("howered")) {
           let brightness = cell.getAttribute("brightness");
-          brightness *= 0.8;
+          brightness *= 1.1;
           cell.setAttribute("brightness", `${brightness}`);
           cell.style.filter = `brightness(${brightness})`;
         } else {
@@ -58,4 +58,7 @@ new_grid.addEventListener("click", () => {
     createGrid(size);
   }
 });
+
 body.appendChild(new_grid);
+
+createGrid(10);
